@@ -1,6 +1,4 @@
-
-console.log('hello')
-var canvas;
+var canvas
 var canvasContext;
 var scoreLeftPlayer = 0;
 var scoreRightPlayer = 0;
@@ -48,10 +46,9 @@ window.onload = function() {
     moveEverything();
     drawEverything();
   //    console.log(ballX)
-}, 1000 / framesPerSecond);
-
-canvas.addEventListener('mousedown', handleMouseClick);
-canvas.addEventListener('mousemove',
+  }, 1000 / framesPerSecond);
+  canvas.addEventListener('mousedown', handleMouseClick);
+  canvas.addEventListener('mousemove',
   function(evt) {
     var mousePos = calculateMousePos(evt);
     paddle.leftPlayer = mousePos.y - (PADDLE_HEIGHT / 2);
@@ -131,15 +128,17 @@ function drawNet() {
 }
 function drawEverything() {
   //next line blanks out the screen with black
+  canvasContext.font = "25px serif";
   colorRect(0, 0, canvas.width, canvas.height, 'black');
   if (showingWinScreen) {
+
     canvasContext.fillStyle = 'white';
     if (scoreLeftPlayer >= WINNING_SCORE) {
-      canvasContext.fillText("Left Player Won!", 350, 200);
+      canvasContext.fillText("Left Player Won!", 320, 200);
     } else if (scoreRightPlayer >= WINNING_SCORE) {
-     canvasContext.fillText("Right Player Won!", 350, 200);
+     canvasContext.fillText("Right Player Won!", 320, 200);
     }
-    canvasContext.fillText("click to continue", 350, 500);
+    canvasContext.fillText("click to continue", 320, 500);
 
     }
     drawNet();
