@@ -4,4 +4,4 @@
 
 
 
-[![Picture of Table Tennis Game](https://d-kang.github.io/project-table-tennis/)](img-table-tennis.png)
+![Picture of Table Tennis Game](img-table-tennis.png)
